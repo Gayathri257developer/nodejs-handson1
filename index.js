@@ -1,8 +1,11 @@
 const http = require('http');
 
 const server = http.createServer((req, res)=>{
-      res.write('<h1>Nodejs Handson1</h1>');
-      res.end();
+      const url = req.url;
+      if(url === '/'){
+          console.log('http server working') 
+          res.write('<h1>Nodejs Handson1</h1>');
+          return res.end();
    }
 });
 
